@@ -1,0 +1,29 @@
+// =================
+// DEFAULT FOCUS STYLES
+// =================
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 5px solid var(--color-secondary);
+}
+
+// =================
+// EXCEPTIONS
+// =================
+
+// sections excluded from the tabindex
+[tabIndex='-1']:focus {
+    outline: none !important;
+}
+
+// the skip link is only visible on focus
+.sr-skip-link:focus {
+    outline: none;
+}
+
+// links that are both focused AND hovered
+a:focus:hover {
+    outline: none;
+}

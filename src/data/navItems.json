@@ -1,0 +1,22 @@
+[
+  {
+    "id": "01",
+    "name": "Home",
+    "path": "home"
+  },
+  {
+    "id": "02",
+    "name": "About",
+    "path": "about"
+  },
+  {
+    "id": "03",
+    "name": "Projects",
+    "path": "projects"
+  },
+  {
+    "id": "04",
+    "name": "Resume",
+    "path": "resume"
+  }
+]
