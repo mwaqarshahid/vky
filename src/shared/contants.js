@@ -1,5 +1,6 @@
 export const LINKS = {
   MOBILELIVE: "https://www.mobilelive.ca",
+  NINJA: "https://ananinja.com/sa/en",
   PSEUDOSQUARE: "https://www.pseudosquare.com/",
   POSTS: "https://www.linkedin.com/in/waqarshahid/recent-activity/all/",
   DOTA: "https://steamcommunity.com/id/waqarshahid/",

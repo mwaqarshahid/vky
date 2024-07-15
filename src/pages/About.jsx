@@ -38,26 +38,19 @@ const About = () => {
             <h2>Work</h2>
             <p>
               I work at{" "}
-              <a
-                href={LINKS.MOBILELIVE}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                mobileLIVE
+              <a href={LINKS.NINJA} target="_blank" rel="noopener noreferrer">
+                Ninja
               </a>
-              , a software studio in Canada having offshore office in Lahore,
-              dedicated to creating innovative digital products.
+              , a rapid delivery service providing essential items like
+              groceries, bakery goods, coffee and beauty products in less than
+              30 minutes.
             </p>
 
             <h2>Writing</h2>
             <p>
               I like writing about benefits of remote work and eager to help
               people over{" "}
-              <a
-                href={LINKS.POSTS}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={LINKS.POSTS} target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
               .
@@ -65,16 +58,11 @@ const About = () => {
 
             <h2>Offline</h2>
             <p>
-              When I am not writing code, I play {" "}
-              <a
-                href={LINKS.DOTA}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              When I am not writing code, I play{" "}
+              <a href={LINKS.DOTA} target="_blank" rel="noopener noreferrer">
                 DOTA-2
-              </a>
-              {" "} and Badminton. I am an
-              enthusiastic{" "}
+              </a>{" "}
+              and Badminton. I am an enthusiastic{" "}
               <a
                 href={LINKS.PHOTOGRAPHY}
                 target="_blank"
@@ -82,12 +70,8 @@ const About = () => {
               >
                 photographer
               </a>
-              . I also know the lyrics to most {" "}
-              <a
-                href={LINKS.MUSIC}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              . I also know the lyrics to most{" "}
+              <a href={LINKS.MUSIC} target="_blank" rel="noopener noreferrer">
                 Akcent
               </a>{" "}
               songs by heart.

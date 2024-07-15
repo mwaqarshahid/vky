@@ -12,11 +12,10 @@ const Home = () => {
         <div className="hero__content">
           <p>
             I am a front-end developer at{" "}
-            <a href={LINKS.MOBILELIVE} className="hero__link">
-              mobileLIVE Inc
+            <a href={LINKS.NINJA} className="hero__link">
+              Ninja
             </a>
-            , and {" "}
-            <br className="hero__br" />
+            , and <br className="hero__br" />
             React trainer at{" "}
             <a
               href={LINKS.PSEUDOSQUARE}

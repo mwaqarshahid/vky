@@ -1,3 +1,4 @@
+import ninja from "../assets/images/ninja.jpeg";
 import telus from "../assets/images/telus.jpg";
 import staples from "../assets/images/staples-2.jpg";
 import kfh from "../assets/images/kfh-1.jpg";
@@ -5,6 +6,13 @@ import digbiHealth from "../assets/images/digbi-health-1.png";
 import jonnyOnIt from "../assets/images/jonny-on-it-2.jpg";
 
 export const projectsList = [
+  {
+    name: "Ninja",
+    link: "https://ananinja.com/sa/en",
+    image: ninja,
+    backgroundColor: "#320E4E",
+    description: "An online grocery store based in MENA region.",
+  },
   {
     name: "Telus",
     link: "https://www.telus.com/",
