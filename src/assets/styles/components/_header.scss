@@ -1,5 +1,14 @@
 .header {
+    position: fixed;
+    top: env(titlebar-area-height, 0);
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: map-get($z-layers, 'nav');
     padding: 1rem 0;
+    background-color: var(--color-bg);
+    /* Avoid backdrop-filter so mobile nav overlay can use position:fixed relative to viewport */
+    box-shadow: 0 1px 0 var(--color-border);
 
     &__inner {
         display: flex;

@@ -4,16 +4,32 @@ import navItems from "../data/navItems.json";
 import { LINKS, PERSONAL } from "../shared/contants";
 
 const Header = ({ openTheme, setOpenTheme }) => {
-  // To control nav item so that it appears as selected
-  const [navItem, setNavItem] = useState("Home");
+  // To control nav item so that it appears as selected (use path to match section ids)
+  const [navItem, setNavItem] = useState("home");
   // To control toggle nav button which appears for tablets and mobile devices
   const [toggleNavBtn, setToggleNavBtn] = useState(false);
-  // To scroll to specific section
+  // To scroll to specific section (account for fixed header so content isn't cut off)
   const scrollToSection = (sectionName) => {
+    if (sectionName === "home") {
+      // Slight negative offset so the top is fully visible. Matches hero__title margin-top: 0.33em
+      // (0.33em in px from the hero title’s computed font-size); fallback if hero not in DOM.
+      const heroTitle = document.querySelector(".hero__title");
+      const emPx = heroTitle
+        ? parseFloat(getComputedStyle(heroTitle).fontSize) * 0.33
+        : 20;
+      window.scrollTo({ top: -emPx, behavior: "smooth" });
+      return;
+    }
     const id = `#${sectionName}`;
     const section = document.querySelector(id);
+    if (!section) return;
+    const header = document.querySelector(".header");
+    const headerHeight = header ? header.offsetHeight : 80;
+    const sectionTop =
+      section.getBoundingClientRect().top + window.scrollY;
+    const top = sectionTop - headerHeight;
     window.scrollTo({
-      top: section.offsetTop,
+      top: Math.max(0, top),
       behavior: "smooth",
     });
   };
@@ -79,7 +95,7 @@ const Header = ({ openTheme, setOpenTheme }) => {
                     return (
                       <li
                         className={`nav__item ${
-                          item.name === navItem ? "nav__item--active" : ""
+                          item.path === navItem ? "nav__item--active" : ""
                         }`}
                         style={{ cursor: "pointer" }}
                         key={item.name}

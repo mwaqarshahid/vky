@@ -6,11 +6,21 @@
     box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
     max-height: 0;
     overflow: hidden;
-    position: relative;
+    position: fixed;
+    top: calc(env(titlebar-area-height, 0) + 5rem);
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: map-get($z-layers, 'modal');
     transition: max-height 0.4s $animation-curve-default;
+
+    @include mq(md) {
+        top: calc(env(titlebar-area-height, 0) + 9.25rem);
+    }
 
     &.is-open {
         max-height: 11rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     &__title {

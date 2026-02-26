@@ -1,5 +1,5 @@
 import React from "react";
-import { LINKS } from "../shared/contants";
+import { LINKS, PERSONAL } from "../shared/contants";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,10 +10,10 @@ const Footer = () => {
           <strong>&copy; 2016&ndash;{currentYear}</strong>
           <br />
           <a className="p-name u-url" rel="me" href="/">
-            Waqar Shahid
+            {PERSONAL.NAME}
           </a>
         </p>
-        <p className="footer__item">
+        <p className="footer__item footer__item--right">
           <strong>Social</strong>
           <br />
           <a

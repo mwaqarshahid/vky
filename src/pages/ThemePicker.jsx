@@ -24,6 +24,7 @@ const ThemePicker = ({
               key={theme.id}
             >
               <button
+                type="button"
                 className="themepicker__btn"
                 aria-label={`select color theme ${theme.name}`}
                 data-theme={theme.id}
@@ -78,7 +79,9 @@ const ThemePicker = ({
         })}
       </ul>
       <button
+        type="button"
         className="iconbtn themepicker__close"
+        aria-label="Close theme picker"
         onClick={() => setOpenTheme(false)}
       >
         <span className="material-symbols-outlined">close</span>

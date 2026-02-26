@@ -1,7 +1,7 @@
 // Main Site Layout
 
 body {
-    overflow-x: hidden;
+    overflow-x: clip; /* clip avoids breaking position: sticky on descendants */
     transition: color 0.15s, background-color 0.15s;
 
     @include mq-down(lg) {
@@ -18,7 +18,12 @@ body {
     min-height: 100vh;
     position: relative;
     transition: transform 0.3s $animation-curve-default;
-    padding-top: env(titlebar-area-height, 0);
+    /* Reserve space for fixed header: titlebar + (padding + avatar + padding) */
+    padding-top: calc(env(titlebar-area-height, 0) + 5rem);
+
+    @include mq(md) {
+        padding-top: calc(env(titlebar-area-height, 0) + 9.25rem);
+    }
 
     .header,
     .footer {
@@ -29,6 +34,7 @@ body {
         display: flex;
         flex-direction: column;
         flex: 1 0 auto;
+        transition: padding-top 0.4s $animation-curve-default;
 
         &::after {
             content: '';
@@ -36,6 +42,11 @@ body {
             height: 0px;
             visibility: hidden;
         }
+    }
+
+    /* Reserve space for open theme picker so hero text isn't covered */
+    &.layout--theme-open .main {
+        padding-top: 11rem;
     }
 }
 

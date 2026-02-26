@@ -4,6 +4,7 @@ import ThemePicker from "./pages/ThemePicker";
 import Header from "./pages/Header";
 import Container from "./pages/Container";
 import Footer from "./pages/Footer";
+import BackToTop from "./components/BackToTop";
 import { PERSONAL } from "./shared/contants";
 import "./App.css";
 
@@ -26,7 +27,10 @@ function App() {
   };
 
   return (
-    <div className="layout" role="document">
+    <div
+        className={`layout ${openTheme ? "layout--theme-open" : ""}`}
+        role="document"
+      >
       <Theme selectedColor={themeColor}>
         <ThemePicker
           openTheme={openTheme}
@@ -37,6 +41,7 @@ function App() {
         <Header openTheme={openTheme} setOpenTheme={setOpenTheme} />
         <Container />
         <Footer />
+        <BackToTop />
       </Theme>
     </div>
   );
