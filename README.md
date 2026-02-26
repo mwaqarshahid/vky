@@ -25,6 +25,24 @@ For testing: `npm test`
 - Click Deploy
 * BINGO!
 
+## SEO (so "Waqar Shahid" shows up in search)
+
+The site includes meta tags, Open Graph, Twitter Cards, JSON-LD (Person schema), `robots.txt`, and `sitemap.xml`.
+
+**After deploy:**
+
+1. **Set your real URL**  
+   Replace `https://waqarshahid.vercel.app` with your actual Vercel URL (e.g. `https://your-project.vercel.app`) or custom domain in:
+   - `public/index.html` (canonical, og:url, og:image, twitter:image, JSON-LD)
+   - `public/robots.txt` (Sitemap line)
+   - `public/sitemap.xml` (`<loc>`)
+
+2. **Google Search Console**  
+   - Go to [Google Search Console](https://search.google.com/search-console).  
+   - Add your property (your site URL).  
+   - Submit your sitemap: `https://your-site.com/sitemap.xml`.
+
+
 # Contact
 -------
 

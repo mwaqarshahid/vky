@@ -1,3 +1,6 @@
-# https://www.robotstxt.org/robotstxt.html
+# Allow all crawlers
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap helps search engines discover and index your pages
+Sitemap: https://waqarshahid.vercel.app/sitemap.xml
