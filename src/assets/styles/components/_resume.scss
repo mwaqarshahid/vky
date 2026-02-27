@@ -1,0 +1,56 @@
+// Resume section: portrait-style document preview + centered download CTA
+
+.page--resume {
+    .page__header {
+        text-align: center;
+    }
+}
+
+.resume-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq(md) {
+        gap: 2.5rem;
+        padding-bottom: 3rem;
+    }
+}
+
+// Portrait dimensions (passport-document style, ~3:4 aspect ratio)
+.resume-section__preview-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.resume-section__preview {
+    width: 100%;
+    max-width: 16rem; // ~256px – portrait width
+    aspect-ratio: 3 / 4;
+    background-color: var(--color-bg-offset);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+
+    @include mq(md) {
+        max-width: 18rem; // ~288px
+    }
+}
+
+.resume-section__pdf {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.resume-section__btn {
+    min-width: 12rem;
+}

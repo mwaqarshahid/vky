@@ -15,7 +15,7 @@ const Home = () => {
             <a href={LINKS.NINJA} className="hero__link">
               Ninja
             </a>
-            , and <br className="hero__br" />
+            , and a
             React trainer at{" "}
             <a
               href={LINKS.PSEUDOSQUARE}

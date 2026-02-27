@@ -4,6 +4,9 @@ import { projectsList } from "../data/projects";
 const Projects = () => {
   return (
     <div className="projects">
+      <header className="page__header">
+        <h2 className="page__title">Projects</h2>
+      </header>
       <ul className="projects__list">
         {projectsList.map((project) => (
           <li className="projects__item" key={project.name}>

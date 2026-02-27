@@ -3,6 +3,7 @@ import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
 import Resume from "./Resume";
+import Contact from "./Contact";
 
 const Container = () => {
   return (
@@ -12,11 +13,12 @@ const Container = () => {
         <About />
       </div>
       <div className="u-mb2" id="projects">
-        <h2>Projects</h2>
         <Projects />
       </div>
+      <div className="u-mb2" id="contact">
+        <Contact />
+      </div>
       <div className="u-mb2" id="resume">
-        <h2>Waqar's Resume</h2>
         <Resume />
       </div>
     </main>

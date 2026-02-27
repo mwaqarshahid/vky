@@ -4,6 +4,11 @@ import { socialsList } from "../data/socials";
 import { LINKS } from "../shared/contants";
 
 const About = () => {
+
+  const yearsOfExperience = Math.floor(
+    (new Date() - new Date("2017-11")) / (1000 * 60 * 60 * 24 * 365)
+  );
+
   return (
     <div className="page page--about">
       <header className="page__header">
@@ -25,7 +30,7 @@ const About = () => {
                 based in Lahore, Pakistan.
               </p>
               <p>
-                I've been building stuff on the web for the last 6 years,
+                I've been building stuff on the web for the last {yearsOfExperience} years,
                 working with clients across various countries and industries.
               </p>
               <p>
