@@ -8,6 +8,10 @@ export const socialsList = [
     link: "https://www.linkedin.com/in/waqarshahid/",
   },
   {
+    name: "Facebook",
+    link: "https://www.facebook.com/M.Waqar.Shahid/",
+  },
+  {
     name: "Twitter",
     link: "https://twitter.com/m_waqar_shahid",
   },
