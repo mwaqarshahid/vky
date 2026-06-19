@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import avatar from "../assets/images/waqar-avatar.jpg";
 import navItems from "../data/navItems.json";
 import { LINKS, PERSONAL } from "../shared/contants";
@@ -8,8 +8,88 @@ const Header = ({ openTheme, setOpenTheme }) => {
   const [navItem, setNavItem] = useState("home");
   // To control toggle nav button which appears for tablets and mobile devices
   const [toggleNavBtn, setToggleNavBtn] = useState(false);
+  const isSmoothScrollingRef = useRef(false);
+  const smoothScrollTimerRef = useRef(null);
+
+  useEffect(() => {
+    const sectionItems = navItems.filter((item) => item.path !== "home");
+
+    const getHeaderHeight = () => {
+      const header = document.querySelector(".header");
+      return header ? header.offsetHeight : 80;
+    };
+
+    const resolveActiveSection = () => {
+      const headerHeight = getHeaderHeight();
+      const activationLine = headerHeight + window.innerHeight * 0.2;
+
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2
+      ) {
+        return sectionItems[sectionItems.length - 1]?.path ?? "home";
+      }
+
+      let active = "home";
+      for (const item of sectionItems) {
+        const section = document.getElementById(item.path);
+        if (!section) continue;
+        if (section.getBoundingClientRect().top <= activationLine) {
+          active = item.path;
+        }
+      }
+      return active;
+    };
+
+    const applyActiveSection = () => {
+      if (isSmoothScrollingRef.current) return;
+      const active = resolveActiveSection();
+      setNavItem((current) => (current === active ? current : active));
+    };
+
+    let frameId = null;
+    const scheduleActiveUpdate = () => {
+      if (frameId !== null) return;
+      frameId = window.requestAnimationFrame(() => {
+        frameId = null;
+        applyActiveSection();
+      });
+    };
+
+    const endSmoothScroll = () => {
+      isSmoothScrollingRef.current = false;
+      applyActiveSection();
+    };
+
+    const onScrollDuringSmoothScroll = () => {
+      if (!isSmoothScrollingRef.current) return;
+      window.clearTimeout(smoothScrollTimerRef.current);
+      smoothScrollTimerRef.current = window.setTimeout(endSmoothScroll, 120);
+    };
+
+    applyActiveSection();
+    window.addEventListener("scroll", scheduleActiveUpdate, { passive: true });
+    window.addEventListener("scroll", onScrollDuringSmoothScroll, {
+      passive: true,
+    });
+    window.addEventListener("resize", applyActiveSection);
+    window.addEventListener("scrollend", endSmoothScroll);
+
+    return () => {
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+      window.clearTimeout(smoothScrollTimerRef.current);
+      window.removeEventListener("scroll", scheduleActiveUpdate);
+      window.removeEventListener("scroll", onScrollDuringSmoothScroll);
+      window.removeEventListener("resize", applyActiveSection);
+      window.removeEventListener("scrollend", endSmoothScroll);
+    };
+  }, []);
+
   // To scroll to specific section (account for fixed header so content isn't cut off)
   const scrollToSection = (sectionName) => {
+    isSmoothScrollingRef.current = true;
+    window.clearTimeout(smoothScrollTimerRef.current);
+
     if (sectionName === "home") {
       // Slight negative offset so the top is fully visible. Matches hero__title margin-top: 0.33em
       // (0.33em in px from the hero title’s computed font-size); fallback if hero not in DOM.
@@ -106,7 +186,12 @@ const Header = ({ openTheme, setOpenTheme }) => {
                         }}
                       >
                         {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
-                        <a className="nav__link" aria-current="page">
+                        <a
+                          className="nav__link"
+                          aria-current={
+                            item.path === navItem ? "page" : undefined
+                          }
+                        >
                           <span className="nav__num" aria-hidden="true">
                             {item.id}
                           </span>
