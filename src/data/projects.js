@@ -63,7 +63,7 @@ export const projectsList = [
   },
   {
     name: "Jonny On It",
-    link: "https://apps.apple.com/us/app/jonny-on-it/id1330021042",
+    link: "https://www.hypepotamus.com/jonny-on-it/",
     image: jonnyOnIt,
     backgroundColor: "#0000FF",
     description:

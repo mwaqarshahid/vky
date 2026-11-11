@@ -6,7 +6,7 @@ import { LINKS } from "../shared/contants";
 const About = () => {
 
   const yearsOfExperience = Math.floor(
-    (new Date() - new Date("2017-11")) / (1000 * 60 * 60 * 24 * 365)
+    (new Date() - new Date("2018-11")) / (1000 * 60 * 60 * 24 * 365)
   );
 
   return (
@@ -26,12 +26,11 @@ const About = () => {
             </div>
             <div className="about__intro lead">
               <p>
-                I'm Muhammad Waqar Shahid (Waqar Shahid, M. Waqar Shahid,
-                Vky), a website and mobile application developer based in
+                I am Waqar Shahid, a website and mobile application developer based in
                 Lahore and Faisalabad, Pakistan.
               </p>
               <p>
-                I've been building stuff on the web for the last {yearsOfExperience} years,
+                I have been building stuff on the web for the last {yearsOfExperience} years,
                 working with clients across various countries and industries.
               </p>
               <p>

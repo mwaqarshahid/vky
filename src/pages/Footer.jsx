@@ -29,7 +29,7 @@ const Footer = () => {
             {PERSONAL.NAME}
           </a>
           <p className="footer__copy">
-            &copy; 2016&ndash;{currentYear}
+            &copy; 2017&ndash;{currentYear}
           </p>
         </div>
         <div className="footer__social">

@@ -1,8 +1,10 @@
 {
   "name": "waqarshahid",
-  "version": "0.1.2",
-  "description": "Personal Website of Muhammad Waqar Shahid",
-  "license": "LHR PK",
+  "author": "Muhammad Waqar Shahid",
+  "homepage": "https://waqarshahid.vercel.app/",
+  "version": "0.1.3",
+  "description": "Personal Portfolio Website of Muhammad Waqar Shahid",
+  "license": "ISC",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
@@ -29,7 +31,6 @@
     "type": "git",
     "url": "http://github.com/mwaqarshahid/vky"
   },
-  "author": "Muhammad Waqar Shahid",
   "eslintConfig": {
     "extends": [
       "react-app",
