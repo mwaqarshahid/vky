@@ -1,3 +1,5 @@
+import plarem from "../assets/images/plarem.png";
+import desiMarla from "../assets/images/desi-marla.png";
 import ninja from "../assets/images/ninja.jpeg";
 import telus from "../assets/images/telus.jpg";
 import staples from "../assets/images/staples-2.jpg";
@@ -6,6 +8,22 @@ import digbiHealth from "../assets/images/digbi-health-1.png";
 import jonnyOnIt from "../assets/images/jonny-on-it-2.jpg";
 
 export const projectsList = [
+  {
+    name: "Plarem",
+    link: "https://play.google.com/store/apps/details?id=com.plarem",
+    image: plarem,
+    backgroundColor: "#A2A4A7",
+    description:
+      "A location-based reminder app that notifies you when you arrive at a place. Live on Google Play.",
+  },
+  {
+    name: "Desi Marla Calculator",
+    link: "https://desimarlacalculator.pk/",
+    image: desiMarla,
+    backgroundColor: "#1E293B",
+    description:
+      "A land-area calculator for Standard, Lahori and Multani marla, square feet and square yards.",
+  },
   {
     name: "Ninja",
     link: "https://ananinja.com/sa/en",
@@ -26,16 +44,14 @@ export const projectsList = [
     link: "https://www.staples.ca/",
     image: staples,
     backgroundColor: "#FF0000",
-    description: "An online e-commerce store based in Amercia and Canada.",
+    description: "An online e-commerce store based in America and Canada.",
   },
   {
     name: "KFH",
-    link: "https://www.telus.com/",
+    link: "https://www.kfh.com/",
     image: kfh,
     backgroundColor: "#FFFFFF",
-    description: `It is the pioneer Islamic bank established in the State of
-      Kuwait and today it is one of the foremost Islamic financial
-      institutions in the world.`,
+    description: "A pioneer Islamic bank based in Kuwait.",
   },
   {
     name: "Digbi Health",
@@ -50,7 +66,7 @@ export const projectsList = [
     link: "https://apps.apple.com/us/app/jonny-on-it/id1330021042",
     image: jonnyOnIt,
     backgroundColor: "#0000FF",
-    description: `This application connects home owners and realtors to service
-      providers in real time with an easy to use mobile application.`,
+    description:
+      "A mobile app that connects homeowners and realtors with local service providers.",
   },
 ];

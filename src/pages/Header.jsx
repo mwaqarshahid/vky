@@ -116,7 +116,7 @@ const Header = ({ openTheme, setOpenTheme }) => {
 
   return (
     <>
-      <header className="header" role="banner" id="home">
+      <header className="header" id="home">
         <div className="header__inner container">
           <a className="header__brand" href={LINKS.HOME} rel="home">
             <img
@@ -124,7 +124,7 @@ const Header = ({ openTheme, setOpenTheme }) => {
               src={avatar}
               width="48"
               height="48"
-              alt="Waqar Shahid display pic"
+              alt="Muhammad Waqar Shahid display pic"
             />
             <span className="header__name" data-testid="myname">
               <span>{PERSONAL.NAME}</span>
@@ -144,10 +144,10 @@ const Header = ({ openTheme, setOpenTheme }) => {
           <div className="header__nav">
             <nav
               className={`nav ${toggleNavBtn ? "nav--open" : ""}`}
-              role="navigation"
               tabIndex="-1"
             >
               <button
+                type="button"
                 className="iconbtn nav__togglebtn"
                 aria-expanded={toggleNavBtn}
                 aria-controls="nav-menu"
@@ -179,18 +179,19 @@ const Header = ({ openTheme, setOpenTheme }) => {
                         }`}
                         style={{ cursor: "pointer" }}
                         key={item.name}
-                        onClick={() => {
-                          setNavItem(item.path);
-                          setToggleNavBtn(false);
-                          scrollToSection(item.path);
-                        }}
                       >
-                        {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
                         <a
                           className="nav__link"
+                          href={`#${item.path}`}
                           aria-current={
-                            item.path === navItem ? "page" : undefined
+                            item.path === navItem ? "true" : undefined
                           }
+                          onClick={(event) => {
+                            event.preventDefault();
+                            setNavItem(item.path);
+                            setToggleNavBtn(false);
+                            scrollToSection(item.path);
+                          }}
                         >
                           <span className="nav__num" aria-hidden="true">
                             {item.id}
@@ -204,8 +205,9 @@ const Header = ({ openTheme, setOpenTheme }) => {
               </div>
             </nav>
             <button
+              type="button"
               className="iconbtn header__themebtn"
-              aria-expanded="false"
+              aria-expanded={openTheme}
               aria-controls="theme-menu"
               onClick={() => setOpenTheme(!openTheme)}
             >

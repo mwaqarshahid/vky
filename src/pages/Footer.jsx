@@ -22,7 +22,7 @@ const renderSocialIcon = (name) => {
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="footer h-card" role="contentinfo">
+    <footer className="footer h-card">
       <div className="footer__inner container">
         <div className="footer__brand">
           <a className="footer__name p-name u-url" rel="me" href="/">
@@ -40,7 +40,7 @@ const Footer = () => {
                   href={social.link}
                   title={social.name}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="me noopener noreferrer"
                   className="footer__social-link"
                   aria-label={social.name}
                 >

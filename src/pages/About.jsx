@@ -21,13 +21,14 @@ const About = () => {
               <img
                 className="responsive-image"
                 src={avatar}
-                alt="Waqar Shahid main pic"
+                alt="Muhammad Waqar Shahid"
               />
             </div>
             <div className="about__intro lead">
               <p>
-                I'm Waqar Shahid, a website and mobile application developer
-                based in Lahore, Pakistan.
+                I'm Muhammad Waqar Shahid (Waqar Shahid, M. Waqar Shahid,
+                Vky), a website and mobile application developer based in
+                Lahore and Faisalabad, Pakistan.
               </p>
               <p>
                 I've been building stuff on the web for the last {yearsOfExperience} years,
@@ -89,7 +90,7 @@ const About = () => {
                   <a
                     href={social.link}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="me noopener noreferrer"
                   >
                     {social.name}
                   </a>

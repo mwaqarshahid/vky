@@ -84,6 +84,8 @@ const Contact = () => {
                   type="text"
                   name="name"
                   placeholder="Name"
+                  aria-label="Name"
+                  autoComplete="name"
                   className="contact-form__input"
                   required
                   disabled={status === "sending"}
@@ -98,6 +100,8 @@ const Contact = () => {
                   type="tel"
                   name="phone"
                   placeholder="Phone"
+                  aria-label="Phone"
+                  autoComplete="tel"
                   className="contact-form__input"
                   disabled={status === "sending"}
                 />
@@ -113,6 +117,8 @@ const Contact = () => {
                   type="email"
                   name="email"
                   placeholder="Your Email"
+                  aria-label="Your Email"
+                  autoComplete="email"
                   className="contact-form__input"
                   required
                   disabled={status === "sending"}
@@ -129,6 +135,7 @@ const Contact = () => {
                 <textarea
                   name="message"
                   placeholder="Tell us about your project or idea"
+                  aria-label="Tell us about your project or idea"
                   className="contact-form__input contact-form__textarea"
                   rows={4}
                   required

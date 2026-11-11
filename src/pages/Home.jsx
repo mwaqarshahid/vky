@@ -7,7 +7,23 @@ const Home = () => {
       <div className="hero__inner">
         <h1 className="hero__title">I make websites.</h1>
         <p className="hero__pretitle">
-          <a href="/about/">Hello, my name is Waqar</a>
+          <a
+            href="#about"
+            onClick={(event) => {
+              event.preventDefault();
+              const section = document.getElementById("about");
+              if (!section) return;
+              const header = document.querySelector(".header");
+              const headerHeight = header ? header.offsetHeight : 80;
+              const top =
+                section.getBoundingClientRect().top +
+                window.scrollY -
+                headerHeight;
+              window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+            }}
+          >
+            Hello, my name is Waqar
+          </a>
         </p>
         <div className="hero__content">
           <p>

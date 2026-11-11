@@ -1,7 +1,9 @@
 {
   "lang": "en",
+  "id": "/",
   "short_name": "Vky",
   "name": "Waqar Shahid",
+  "description": "Portfolio of Muhammad Waqar Shahid (Waqar Shahid, M. Waqar Shahid, Vky), fullstack developer.",
   "icons": [
     {
       "src": "favicon.ico",

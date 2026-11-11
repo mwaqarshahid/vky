@@ -27,10 +27,10 @@ function App() {
   };
 
   return (
-    <div
-        className={`layout ${openTheme ? "layout--theme-open" : ""}`}
-        role="document"
-      >
+    <div className={`layout ${openTheme ? "layout--theme-open" : ""}`}>
+      <a className="sr-skip-link" href="#main">
+        Skip to content
+      </a>
       <Theme selectedColor={themeColor}>
         <ThemePicker
           openTheme={openTheme}

@@ -7,7 +7,7 @@ import Contact from "./Contact";
 
 const Container = () => {
   return (
-    <main className="main container" role="main" id="main" tabIndex="-1">
+    <main className="main container" id="main" tabIndex="-1">
       <Home />
       <div id="about">
         <About />
